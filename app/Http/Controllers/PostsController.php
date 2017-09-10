@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -13,7 +14,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -23,9 +24,10 @@ class PostsController extends Controller
      */
     public function create()
     {
-        echo "aaa";
+        $users = DB::table('users')->get();
+        var_dump($users);
         exit;
-        //
+
     }
 
     /**
