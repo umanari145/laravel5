@@ -106,6 +106,8 @@ EOF;
 
 });
 
+//controllerに飛ばす
+Route::get('hello6/{id?}/{pass?}', 'HelloController@index');
 
 
 Route::resource('posts', 'PostsController');
