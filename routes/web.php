@@ -113,8 +113,11 @@ Route::get('hello6/{id?}/{pass?}', 'HelloController@index');
 Route::get('hello7/other', 'HelloController@other');
 Route::get('hello7/other2', 'HelloController@other2');
 
-//シングル子アクションか
+//シングルアクションか
 Route::get('foo', 'FooController');
+
+//シングルアクションか
+Route::get('bar', 'BarController@index');
 
 
 Route::resource('posts', 'PostsController');
