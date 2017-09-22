@@ -116,8 +116,14 @@ Route::get('hello7/other2', 'HelloController@other2');
 //シングルアクションか
 Route::get('foo', 'FooController');
 
-//シングルアクションか
+//requestオブジェクトを試しにとる
 Route::get('bar', 'BarController@index');
 
+Route::get('hoge', function (){
+    //ディレクトリ/ファイル名
+    return view('hoge.index');
+});
+
+Route::get('hoge2', 'HogeController@sample');
 
 Route::resource('posts', 'PostsController');
