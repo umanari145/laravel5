@@ -134,5 +134,11 @@ Route::get('sample3/{id?}', 'HogeController@sample3');
 //http://192.168.33.10/sample4?id=98 みたいなURLでidとれる
 Route::get('sample4', 'HogeController@sample4');
 
+Route::get('sample5', 'HogeController@sample5');
+
+Route::get('sample6', 'HogeController@sample6');
+
+//httpリクエストでhogeにとんだらHogeControllerのhoge2メソッドに飛ぶ
+Route::post('sample6', 'HogeController@hoge2');
 
 Route::resource('posts', 'PostsController');

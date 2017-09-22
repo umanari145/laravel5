@@ -32,4 +32,24 @@ class HogeController extends Controller
             'id' => 'urlからのおくりもの' . $request->id
         ]);
     }
+
+    public function sample5() {
+        return view ('hoge.sample5',[
+            'msg' => 'bradeレイアウトテンプレートに表示します'
+        ]);
+    }
+
+    /**  postの処理に関して **/
+    public function sample6() {
+        return view ('hoge.sample6',[
+            'msg' => '好きな値を入れてね'
+        ]);
+    }
+    public function hoge2(Request $request) {
+
+        return view ('hoge.sample6', [
+            'msg' => $request->message
+        ]);
+    }
+
 }
