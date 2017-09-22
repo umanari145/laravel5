@@ -126,4 +126,13 @@ Route::get('hoge', function (){
 
 Route::get('hoge2', 'HogeController@sample');
 
+Route::get('sample2', 'HogeController@sample2');
+
+Route::get('sample3/{id?}', 'HogeController@sample3');
+
+//Httpオブジェクトを引数にとるとクエリを宣言しておかなくてよい
+//http://192.168.33.10/sample4?id=98 みたいなURLでidとれる
+Route::get('sample4', 'HogeController@sample4');
+
+
 Route::resource('posts', 'PostsController');
