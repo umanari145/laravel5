@@ -20,7 +20,14 @@ h1 {
     <p>templateページ</p>
 </body>
 <p>input pageへ飛びます</p>
-{{$msg}}
+
+
+@if($msg != "")
+<p>こんにちは{{$msg}}さん</p>
+@else
+<p>何か入力をしてください</p>
+@endif
+
 <form method="POST" action="/sample6">
 {{csrf_field()}}
 <input type="text" name="message" value="">

@@ -52,4 +52,17 @@ class HogeController extends Controller
         ]);
     }
 
+    public function sample7(Request $request) {
+        return view ('hoge.sample7', [
+            'items' => [
+               'first'  => 'ryu',
+               'second' => 'ken',
+               'third'  => 'gouki'
+            ],
+            'items2' =>[
+               'ichiro','jirou','saburou'
+            ]
+        ]);
+    }
+
 }

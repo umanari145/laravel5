@@ -141,4 +141,7 @@ Route::get('sample6', 'HogeController@sample6');
 //httpリクエストでhogeにとんだらHogeControllerのhoge2メソッドに飛ぶ
 Route::post('sample6', 'HogeController@hoge2');
 
+Route::get('sample7', 'HogeController@sample7');
+
+
 Route::resource('posts', 'PostsController');
