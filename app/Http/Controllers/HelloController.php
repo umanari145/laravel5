@@ -27,6 +27,14 @@ id: {$id}
 pass: {$pass}
 </html>
 EOF;
-EOF;
     }
+
+    public function other() {
+        return 'honjituhaseitenari';
+    }
+
+    public function other2() {
+        return 'honjituhaseitenari_2';
+    }
+
 }

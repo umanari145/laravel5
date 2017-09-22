@@ -109,5 +109,12 @@ EOF;
 //controllerに飛ばす
 Route::get('hello6/{id?}/{pass?}', 'HelloController@index');
 
+//通常の遷移
+Route::get('hello7/other', 'HelloController@other');
+Route::get('hello7/other2', 'HelloController@other2');
+
+//シングル子アクションか
+Route::get('foo', 'FooController');
+
 
 Route::resource('posts', 'PostsController');
