@@ -11,6 +11,10 @@
 |
 */
 
+//ローカルなミドルウェアはここで呼び出しを行う
+use App\Http\Middleware\HelloMiddleware;
+use App\Http\Middleware\FooMiddleware;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -148,5 +152,11 @@ Route::get('sample8', 'HogeController@sample8');
 Route::get('sample9', 'HogeController@sample9');
 
 Route::get('sample10', 'HogeController@sample10');
+
+Route::get('sample11', 'HogeController@sample11')
+       ->middleware(HelloMiddleware::class);
+
+Route::get('sample12', 'HogeController@sample12')
+      ->middleware(FooMiddleware::class);
 
 Route::resource('posts', 'PostsController');

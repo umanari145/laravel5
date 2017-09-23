@@ -83,4 +83,14 @@ class HogeController extends Controller
             ]
         ]);
     }
+
+    public function sample11(Request $request) {
+        return view ('hoge.sample11',[
+            'data' => $request->data
+        ]);
+    }
+
+    public function sample12(Request $request) {
+        return view ('hoge.sample12');
+    }
 }
