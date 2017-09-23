@@ -18,10 +18,11 @@ class KuwataController extends Controller
         $validator = Validator::make($request->all(),[
             'name' => 'required',
             'mail' => 'email',
-            'age'   => 'numeric|between:0,150',
+            'age'   => 'hello|numeric|between:0,150',
         ],[
             'name.required' => '名前が未入力です。',
             'mail.email' => 'メールアドレスを正確に入力してください。',
+            'age.hello'   => '偶数のみ入力してください。', //独自validation
             'age.numeric' => '年齢は数字で!',
             'age.between' => '年齢は0～150の間で'
         ]);
