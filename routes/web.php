@@ -159,4 +159,8 @@ Route::get('sample11', 'HogeController@sample11')
 Route::get('sample12', 'HogeController@sample12')
       ->middleware(FooMiddleware::class);
 
+Route::get('kakefu',  'KakefuController@index');
+Route::post('kakefu', 'KakefuController@post');
+
+
 Route::resource('posts', 'PostsController');
