@@ -162,5 +162,10 @@ Route::get('sample12', 'HogeController@sample12')
 Route::get('kakefu',  'KakefuController@index');
 Route::post('kakefu', 'KakefuController@post');
 
+Route::get('egawa',  'EgawaController@index');
+Route::post('egawa', 'EgawaController@post');
+
+Route::get('kuwata',  'KuwataController@index');
+Route::post('kuwata', 'KuwataController@post');
 
 Route::resource('posts', 'PostsController');
