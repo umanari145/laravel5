@@ -26,10 +26,12 @@ h1 {
 
     <hr size="1">
 
-
     <div class="content">
     @yield('content')
     </div>
+
+    <p> 'view_message' => {{$view_message}}</p>
+
 
     <div class="footer">
     @yield('footer')
