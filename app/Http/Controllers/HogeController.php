@@ -34,7 +34,9 @@ class HogeController extends Controller
     }
 
     public function sample5() {
+        //  ちなみに hoge/sample5.phpとhoge/sample5.blade.phpがあった場合は後者が優先度が高くなる
         return view ('hoge.sample5',[
+
             'msg' => 'bradeレイアウトテンプレートに表示します'
         ]);
     }
@@ -65,4 +67,20 @@ class HogeController extends Controller
         ]);
     }
 
+    public function sample8(Request $request) {
+        return view ('hoge.sample8');
+    }
+
+    public function sample9(Request $request) {
+        return view ('hoge.sample9');
+    }
+
+    public function sample10(Request $request) {
+        return view ('hoge.sample10',[
+            'data' =>[
+                ['name' => 'tarou' , 'val' => 'val1'],
+                ['name' => 'jirou' , 'val' => 'val2']
+            ]
+        ]);
+    }
 }

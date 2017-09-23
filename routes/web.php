@@ -143,5 +143,10 @@ Route::post('sample6', 'HogeController@hoge2');
 
 Route::get('sample7', 'HogeController@sample7');
 
+Route::get('sample8', 'HogeController@sample8');
+
+Route::get('sample9', 'HogeController@sample9');
+
+Route::get('sample10', 'HogeController@sample10');
 
 Route::resource('posts', 'PostsController');
