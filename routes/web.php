@@ -168,4 +168,9 @@ Route::post('egawa', 'EgawaController@post');
 Route::get('kuwata',  'KuwataController@index');
 Route::post('kuwata', 'KuwataController@post');
 
+Route::get('ochiai',  'OchiaiController@index');
+Route::get('ochiai/add',  'OchiaiController@add');
+Route::post('ochiai/create',  'OchiaiController@create');
+
+
 Route::resource('posts', 'PostsController');
