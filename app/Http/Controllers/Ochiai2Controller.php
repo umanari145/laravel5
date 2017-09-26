@@ -6,21 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
 
-class OchiaiController extends Controller
+class Ochiai2Controller extends Controller
 {
     public function index(Request $request) {
 
         $data = null;
         if (isset($request->id)) {
-            //$data = DB::select('select * from users where id = :id',['id' => $request->id]);
-            //firstだと単一のオブジェクトが取れる/getだと配列の中にオブジェクトが入る
-            //$data = DB::table('users')->where('id', $request->id)->first();
-            //$data = DB::table('users')->where('id', $request->id)->get();
-            //ある程度複雑なクエリはwhereRaw
-            $data = DB::table('users')->whereRaw('id <> ? ', $request->id)->orderBy('id', 'desc')->get();
+            $data = DB::select('select * from users where id = :id',
+                ['id' => $request->id]);
         } else {
-            //$data = DB::select('select * from users');
-            $data = DB::table('users')->get();
+            $data = DB::select('select * from users');
         }
         return view('hoge.ochiai',['data' => $data]);
     }
@@ -62,12 +57,10 @@ class OchiaiController extends Controller
         ];
 
         if ($request->id) {
-            DB::table('users')->where('id', $request->id)->update($params);
-            //$params['id'] = $request->id;
-            //DB::update('update users set name =:name, short_name =:short_name, password =:password,email =:email,email2 =:email2 where id =:id ', $params);
+            $params['id'] = $request->id;
+            DB::insert('update users set name =:name, short_name =:short_name, password =:password,email =:email,email2 =:email2 where id =:id ', $params);
         } else {
-            DB::table('users')->insert($params);
-            //DB::insert('insert into users (name, short_name,password,email,email2) values (:name,:short_name,:password,:email,:email2) ', $params);
+            DB::insert('insert into users (name, short_name,password,email,email2) values (:name,:short_name,:password,:email,:email2) ', $params);
         }
         return redirect('/ochiai/complete');
 
