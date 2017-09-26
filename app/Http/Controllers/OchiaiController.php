@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Validator;
 
 class OchiaiController extends Controller
 {
@@ -24,11 +24,41 @@ class OchiaiController extends Controller
         return view('hoge.ochiai_add');
     }
 
-    public function create() {
+    public function create(Request $request) {
+
+        $validator = Validator::make($request->all(),[
+            'name' => 'required',
+            'email' => 'email'
+        ],[
+            'name.required' => '名前が未入力です。',
+            'email.email' => 'メールアドレスを正確に入力してください。',
+        ]);
+
+        if ($validator->fails()) {
+            //今回は同じだがリダイレクト先を任意に指定できる
+            return redirect('/ochiai/add')
+            ->withErrors($validator)
+            ->withInput();
+        }
+
+        $params =[
+            'name' => $request->name,
+            'email' => $request->email,
+            'short_name' => 'aaa',
+            'password' => 'bbb',
+            'email' => $request->email,
+            'email2' => $request->email
+        ];
+
+        DB::insert('insert into users (name, short_name,password,email,email2) values (:name,:short_name,:password,:email,:email2) ', $params);
+
+        return redirect('/ochiai/complete');
 
 
+    }
 
-        return view('hoge.ochiai_add');
+    public function complete() {
+        return view('hoge.ochiai_complete');
     }
 
 }

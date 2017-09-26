@@ -27,9 +27,9 @@ name:<input type="text" name="name" value="{{old('name')}}">
 @endif
 </p>
 
-<p>email:<input type="text" name="mail" value="{{old('mail')}}">
-@if($errors->has('mail'))
-{{$errors->first('mail')}}
+<p>email:<input type="text" name="email" value="{{old('email')}}">
+@if($errors->has('email'))
+{{$errors->first('email')}}
 @endif
 </p>
 

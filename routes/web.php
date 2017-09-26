@@ -170,7 +170,8 @@ Route::post('kuwata', 'KuwataController@post');
 
 Route::get('ochiai',  'OchiaiController@index');
 Route::get('ochiai/add',  'OchiaiController@add');
-Route::post('ochiai/create',  'OchiaiController@create');
 
+Route::post('ochiai/create',  'OchiaiController@create');
+Route::get('ochiai/complete',  'OchiaiController@complete');
 
 Route::resource('posts', 'PostsController');
