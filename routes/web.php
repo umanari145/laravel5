@@ -176,4 +176,12 @@ Route::get('ochiai/complete',  'OchiaiController@complete');
 
 Route::get('ochiai/edit',  'OchiaiController@edit');
 
+Route::get('ochiai2',  'Ochiai2Controller@index');
+Route::get('ochiai2/add',  'Ochiai2Controller@add');
+
+Route::post('ochiai2/create',  'Ochiai2Controller@create');
+Route::get('ochiai2/complete',  'Ochiai2Controller@complete');
+
+Route::get('ochiai2/edit',  'Ochiai2Controller@edit');
+
 Route::resource('posts', 'PostsController');

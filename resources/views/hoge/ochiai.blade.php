@@ -18,7 +18,8 @@ h1 {
 <body>
 <ul>
 @foreach($data as $item)
-<li>{{$item->name}}:{{$item->email}}</li>
+<!-- getDataはorマッパーのときのみ ochiai2 -->
+<li>{{$item->name}}:{{$item->email}}<p>{{$item->getData()}}</p></li>
 @endforeach
 </ul>
 </body>

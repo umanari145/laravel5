@@ -5,17 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use App\Person;
 
 class Ochiai2Controller extends Controller
 {
     public function index(Request $request) {
-
         $data = null;
-        if (isset($request->id)) {
-            $data = DB::select('select * from users where id = :id',
-                ['id' => $request->id]);
+        if (isset($request->name)) {
+            //primarykeyで取得する工夫は下記の通り
+            //$data = Person::find($request->id);
+
+            //1件のときはfirst
+            //$data = Person::where('name', $request->name)->first();
+
+            $data = Person::where('name', $request->name)->get();
+
         } else {
-            $data = DB::select('select * from users');
+            $data = Person::all();
         }
         return view('hoge.ochiai',['data' => $data]);
     }
